@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class ButtonController : MonoBehaviour
 {
-    //public UnityEngine.UI.Image fade;
-    //float fades = 1.0f;
-    //float time = 0;
-
+    
     public void OnClickExit()
     {
 
@@ -24,6 +23,7 @@ public class ButtonController : MonoBehaviour
 
     public void ChangeSecondScene()
     {
+      
         SceneManager.LoadScene("Intro_1_JM");
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Fade_Out 
 public class Fade : MonoBehaviour
 {
 
@@ -22,7 +23,7 @@ public class Fade : MonoBehaviour
         time += Time.deltaTime;
         if (fades > 0.0f && time >= 0.1f)
         {
-            fades -= 0.1f;
+            fades -= 0.05f;
             fade.color = new Color(0, 0, 0, fades);
             time = 0;
         }
@@ -30,7 +31,7 @@ public class Fade : MonoBehaviour
         {
 
             time = 0;
-
+            Destroy(gameObject);
         }
     }
 }

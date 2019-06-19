@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 13602937af3060a46877d2be98969e52
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Florencesans SC Exp
+  fontNames:
+  - Florencesans SC Exp
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 022e73b586c89094aa276deae7aa4e89, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 839d063d91841a1499e57694f5d595fb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Florencesans SC Comp
+  fontNames:
+  - Florencesans SC Comp
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3151ebbcde1124d46886a83000e53b81, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
