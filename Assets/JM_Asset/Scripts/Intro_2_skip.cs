@@ -13,6 +13,6 @@ public class Intro_2_skip : MonoBehaviour
     public void ChangeSecondScene()
     {
 
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Main");
     }
 }

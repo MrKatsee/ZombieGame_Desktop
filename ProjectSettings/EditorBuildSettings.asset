@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/JM_Asset/Scenes/Intro_Main_JM.unity
     guid: 8e3c758baddd2ca49900edd37efb170e
-  - enabled: 0
+  - enabled: 1
     path: Assets/JM_Asset/Scenes/Intro_1_JM.unity
     guid: e4bc024cd523758479acdbb635090fe4
-  - enabled: 0
+  - enabled: 1
     path: Assets/JM_Asset/Scenes/Intro_2_JM.unity
     guid: 8398c1f8bb9840348a27719f3df9075c
   - enabled: 1
