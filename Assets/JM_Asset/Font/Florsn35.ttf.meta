@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c8a0ead7659b8f045b9cfaf26e900bce
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Florencesans SC Black
+  fontNames:
+  - Florencesans SC Black
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 20df2314c9ec9f94caca3d593df22d28, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

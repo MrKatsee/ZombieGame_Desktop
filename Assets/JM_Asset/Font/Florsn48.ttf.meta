@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 59791d9eda36c1541ad9acd92dc8e3b9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Florencesans SC Rev
+  fontNames:
+  - Florencesans SC Rev
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1c952cf006910c2479812e447f488e85, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
