@@ -66,13 +66,14 @@ public class PlayerData : CharacterData
 
     public void Init_Player()
     {
-        maxHP = 10f;
+        maxHP = 15f;
         HP = maxHP;
 
         //기본 무기
         Main_Weapon = new GameObject("Pistol").AddComponent<Pistol>();
         Main_Weapon.transform.parent = gameObject.transform;
         Main_Weapon.Init_Weapon();
+        Sub_Weapon = null;
         PlayUIManager.Instance.ChangeWeaponUI_Main(Main_Weapon);
     }
 
@@ -134,7 +135,9 @@ public class PlayerData : CharacterData
                 else Sub_Weapon = temp;
 
                 alreadyGetted = true;
-                Destroy(col.gameObject);
+                if (Sub_Weapon.weapon != Weapons.JERRYCAN)
+                    Destroy(col.gameObject);
+                else col.gameObject.SetActive(false);
             }
         }
 
@@ -152,5 +155,10 @@ public class PlayerData : CharacterData
         }
 
         Debug.Log($"Main : {Main_Weapon.name} / Sub : {Sub_Weapon.name}");
+    }
+
+    public override void DestroyCall()
+    {
+        PlayManager.Instance.GameOver();
     }
 }

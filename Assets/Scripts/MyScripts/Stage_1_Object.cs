@@ -38,21 +38,31 @@ public class Stage_1_Object : MonoBehaviour
             obejctPercent = value;
             if (obejctPercent != 0)
                 SystemMessage.SystemMessageCreate($"주유 달성률 : {obejctPercent} / {maxPercent}");
-
+            if (ObjectPercent == 1)
+        {
+            LevelManager.Instance.level_1_stage = 3;
+        }
             if (obejctPercent == maxPercent)
             {
-                LevelManager.Instance.level_1_stage = 3;
+                LevelManager.Instance.level_1_stage = 4;
             }
         }
     }
     float maxPercent;
 
-    private void Start()
+    public void Init_1_Object()
     {
         maxHP = 100;
         HP = maxHP;
         maxPercent = 4f;
         ObjectPercent = 0f;
+        oilingPercent = 0f;
+        maxOilPercent = 15f;
+    }
+
+    private void Start()
+    {
+        Init_1_Object();
     }
 
     public void GetDamage(float damage)
@@ -62,7 +72,7 @@ public class Stage_1_Object : MonoBehaviour
 
     public void DestroyCall()
     {
-        Destroy(gameObject);
+        PlayManager.Instance.GameOver();
     }
 
     private void Update()
@@ -75,7 +85,7 @@ public class Stage_1_Object : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        Debug.Log("Hello");
+
         if (c.gameObject.tag == "Player")
         {
             PlayerData pData = c.gameObject.GetComponent<PlayerData>();
@@ -95,7 +105,7 @@ public class Stage_1_Object : MonoBehaviour
     }
 
     private float oilingPercent = 0f;
-    private float maxOilPercent = 30f;
+    private float maxOilPercent = 15f;
     private float oiling_Spd = 1f;
 
     public MobSpawner[] spawner;        

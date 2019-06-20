@@ -18,6 +18,25 @@ public class Bullet : MonoBehaviour
         //StartCoroutine(Move());
         transform.rotation = Quaternion.LookRotation(vec, Vector3.up);
         transform.position = transform.position + new Vector3(0f, 0.3f, 0f);
+        StartCoroutine(DestroyBullet());
+    }
+
+    IEnumerator DestroyBullet()
+    {
+        float timer = 0f;
+
+        while (true)
+        {
+            if (timer >= 5f)
+            {
+                break;
+            }
+
+            timer += MyTime.deltaTime;
+            yield return null;
+        }
+
+        DestroyCall();
     }
     /*
     IEnumerator Move()

@@ -63,6 +63,12 @@ public class PlayManager : MonoBehaviour
         }
 
         throw new System.Exception("Invalid Weapon!");
+    }
 
+    public GameObject gameOverCanvas;
+
+    public void GameOver()
+    {
+        gameOverCanvas.SetActive(true);
     }
 }

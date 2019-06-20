@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class JerryCan : Weapon
 {
+    private void Awake()
+    {
+        weapon = Weapons.JERRYCAN;
+    }
+
     private void Start()
     {
-
         Init_Weapon();
     }
     public override void Init_Weapon()

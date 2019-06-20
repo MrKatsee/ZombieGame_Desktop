@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Control : MonoBehaviour
 {
-    public const float spd = 3f;
+    public const float spd = 5f;
 
     public void Move(Vector3 _vec)
     {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SystemMessage : MonoBehaviour
 {
-    public static int msgNum = 0;
+    private static int msgNum = 0;
     
     public static void SystemMessageCreate(string msg)
     {
@@ -17,6 +17,7 @@ public class SystemMessage : MonoBehaviour
 
     float timer = 0f;
     int myMsgNum = 0;
+    int msgNum_Temp = 0;
     RectTransform rTransform;
     Text myText;
 
@@ -35,6 +36,7 @@ public class SystemMessage : MonoBehaviour
         myText.material = ArialFont.material;
 
         myMsgNum = msgNum;
+        msgNum_Temp = msgNum;
         msgNum++;
 
         transform.SetParent(PlayManager.Instance.GetSystemMessageCanvas().transform);
@@ -46,7 +48,13 @@ public class SystemMessage : MonoBehaviour
         if (timer >= 5f)
             StartCoroutine(DestroyCall());
 
-        rTransform.localPosition = new Vector3(0, 350f - msgNum * 20f, 0f);
+        if (myMsgNum >= 0 && msgNum_Temp > msgNum)
+        {
+            myMsgNum--;
+        }
+        msgNum_Temp = msgNum;
+
+        rTransform.localPosition = new Vector3(0, 350f - myMsgNum * 50f, 0f);
 
         timer += Time.deltaTime;
     }

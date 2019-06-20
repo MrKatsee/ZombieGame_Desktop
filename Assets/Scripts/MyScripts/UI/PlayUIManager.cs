@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class PlayUIManager : MonoBehaviour
 {
@@ -54,5 +54,19 @@ public class PlayUIManager : MonoBehaviour
         max = weapon.max_bullet;
         float bullet_percentage = 1f - cur / max;
         bullet_Main.fillAmount = bullet_percentage;
+    }
+
+    public GameObject gameOverCanvas;
+
+    public void RestartButtonClicked()
+    {
+        gameOverCanvas.SetActive(false);
+        LevelManager.Instance.RestartCall();
+    }
+
+    public void MenuButtonClicked()
+    {
+        gameOverCanvas.SetActive(false);
+        SceneManager.LoadScene("Intro_Main_JM");
     }
 }

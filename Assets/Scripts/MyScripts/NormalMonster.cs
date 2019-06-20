@@ -12,8 +12,8 @@ public class NormalMonster : Monster
     public override void Start()
     {
         base.Start();
-        HP = 3f;
         maxHP = 3f;
+        HP = 3f;
     }
 
     // Update is called once per frame

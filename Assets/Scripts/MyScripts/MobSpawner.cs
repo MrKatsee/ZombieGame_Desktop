@@ -22,6 +22,13 @@ public class MobSpawner : MonoBehaviour
         StartCoroutine(SpawnMob());
     }
 
+    public void Init_Spawner(int n, float spd, bool targetPlayer)
+    {
+        mobNum = n;
+        spawnSpd = spd;
+
+        StartCoroutine(SpawnMob_TargettingPlayer());
+    }
 
     IEnumerator SpawnMob()
     {
@@ -32,11 +39,30 @@ public class MobSpawner : MonoBehaviour
             if (mobNum == count)
                 break;
 
-            GameObject temp = Instantiate(mob, transform.position, Quaternion.identity);
+            GameObject temp = Instantiate(mob, transform.position + new Vector3(Random.Range(3f, -3f), 0f, Random.Range(3f, -3f)), Quaternion.identity);
 
             count++;
 
-            yield return new WaitForSeconds(1f * (1f/spawnSpd));
+            yield return new WaitForSeconds(1f * (1f/spawnSpd) + Random.Range(0.5f, -0.5f));
+        }
+
+    }
+
+    IEnumerator SpawnMob_TargettingPlayer()
+    {
+        int count = 0;
+
+        while (true)
+        {
+            if (mobNum == count)
+                break;
+
+            GameObject temp = Instantiate(mob, transform.position + new Vector3(Random.Range(3f, -3f), 0f, Random.Range(3f, -3f)), Quaternion.identity);
+            temp.GetComponent<MonsterControl>().targetEntity = PlayManager.Instance.GetData().gameObject;
+
+            count++;
+
+            yield return new WaitForSeconds(1f * (1f / spawnSpd) + Random.Range(0.5f, -0.5f));
         }
 
     }
