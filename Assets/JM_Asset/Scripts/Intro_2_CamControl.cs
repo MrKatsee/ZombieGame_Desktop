@@ -23,7 +23,7 @@ public class Intro_2_CamControl : MonoBehaviour
         first_cam.enabled = true;
         second_cam.enabled = false;
 
-        if(time > 2.0f)
+        if(time > 6.0f)
         {
             first_cam.enabled = false;
             second_cam.enabled = true;
