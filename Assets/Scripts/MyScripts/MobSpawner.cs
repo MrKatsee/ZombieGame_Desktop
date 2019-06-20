@@ -10,10 +10,18 @@ public class MobSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnMob());
+        //StartCoroutine(SpawnMob());
     }
 
     //Init 함수 만들어야함
+    public void Init_Spawner(int n, float spd)
+    {
+        mobNum = n;
+        spawnSpd = spd;
+
+        StartCoroutine(SpawnMob());
+    }
+
 
     IEnumerator SpawnMob()
     {
@@ -28,7 +36,7 @@ public class MobSpawner : MonoBehaviour
 
             count++;
 
-            yield return new WaitForSeconds(1f * spawnSpd);
+            yield return new WaitForSeconds(1f * (1f/spawnSpd));
         }
 
     }

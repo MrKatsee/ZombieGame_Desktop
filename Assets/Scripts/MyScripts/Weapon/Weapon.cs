@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Weapons
 {
-    PISTOL, RIFLE
+    PISTOL, RIFLE, JERRYCAN
 }
 
 public abstract class Weapon : MonoBehaviour

@@ -17,11 +17,28 @@ public class PlayerData : CharacterData
     private Weapon sub_Weapon;
     public Weapon Sub_Weapon
     {
-        get { return sub_Weapon; }
+        get
+        {
+            return sub_Weapon;
+        }
         set
         {
             sub_Weapon = value;
-            PlayUIManager.Instance.ChangeWeaponUI_Sub(sub_Weapon, true);
+            if (sub_Weapon != null)
+            {
+                PlayUIManager.Instance.ChangeWeaponUI_Sub(Sub_Weapon, true);
+
+                if (Sub_Weapon.weapon == Weapons.JERRYCAN && LevelManager.Instance.level_1_stage == 0)
+                {
+                    LevelManager.Instance.level_1_stage = 1;
+                }
+            }
+            else
+            {
+                PlayUIManager.Instance.ChangeWeaponUI_Sub();
+            }
+
+
         }
     }
     private Weapon drop_Weapon;
@@ -125,6 +142,8 @@ public class PlayerData : CharacterData
         if (alreadyGetted == false)
         {
             if (sub_Weapon == null)
+                return;
+            else if (sub_Weapon.weapon == Weapons.JERRYCAN)
                 return;
 
             Weapon temp = Main_Weapon;

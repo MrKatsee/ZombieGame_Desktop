@@ -8,10 +8,6 @@ public class PlayerHPUI : MonoBehaviour
     public PlayerData pData;
     public Image hpBar;
 
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {

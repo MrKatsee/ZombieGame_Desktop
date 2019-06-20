@@ -24,13 +24,22 @@ public class NormalMonster : Monster
         }   
     }
 
-    void OnTriggerStay(Collider c)
+
+    void OnCollisionStay(Collision c)
     {
         if (c.gameObject.tag == "Player")
         {
             if (attackCool <= 0f)
             {
-                c.GetComponent<CharacterData>().GetDamage(damage);
+                c.gameObject.GetComponent<CharacterData>().GetDamage(damage);
+                attackCool += 1f / attackSpd;
+            }
+        }
+        if (c.gameObject.tag == "Object")
+        {
+            if (attackCool <= 0f)
+            {
+                c.gameObject.GetComponent<Stage_1_Object>().GetDamage(damage);
                 attackCool += 1f / attackSpd;
             }
         }

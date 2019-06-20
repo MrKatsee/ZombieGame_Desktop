@@ -36,6 +36,12 @@ public class PlayManager : MonoBehaviour
         return theObject;
     }
 
+    public GameObject systemMessageCanvas;
+    public GameObject GetSystemMessageCanvas()
+    {
+        return systemMessageCanvas;
+    }
+
     public void InstantiateDropBox(Vector3 pos)
     {
         DropBox dB = Instantiate(dropBox, pos, Quaternion.identity).GetComponent<DropBox>();
@@ -52,6 +58,8 @@ public class PlayManager : MonoBehaviour
                 return gunSprites[0];
             case Weapons.RIFLE:
                 return gunSprites[1];
+            case Weapons.JERRYCAN:
+                return gunSprites[2];
         }
 
         throw new System.Exception("Invalid Weapon!");

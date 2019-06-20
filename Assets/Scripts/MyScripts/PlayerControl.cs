@@ -14,6 +14,7 @@ public class PlayerControl : Control
     {
         playerAnimator = GetComponent<Animator>();
         playerData = GetComponent<PlayerData>();
+
     }
 
     void Update()
@@ -23,6 +24,9 @@ public class PlayerControl : Control
 
     void InputControl()
     {
+        if (move_joystick == null || shoot_joystick == null)
+            return;
+
         if (move_joystick.Horizontal != 0 && move_joystick.Vertical != 0)
         {
             playerAnimator.SetFloat("Move", 1);
@@ -33,7 +37,6 @@ public class PlayerControl : Control
         if (shoot_joystick.Horizontal != 0 && shoot_joystick.Vertical != 0)
         {
             Vector3 vec = new Vector3(shoot_joystick.Horizontal, 0, shoot_joystick.Vertical);
-
 
             playerData.Main_Weapon.Shoot(vec);
             transform.rotation = Quaternion.LookRotation(vec, Vector3.up);
