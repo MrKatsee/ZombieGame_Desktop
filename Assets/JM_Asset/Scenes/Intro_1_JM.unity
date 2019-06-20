@@ -303,6 +303,10 @@ MonoBehaviour:
     type: 3}
   subtitle_3: {fileID: 5525928910836067143, guid: 6f36a1f0a0c441b49bf232a70ad80f96,
     type: 3}
+  subtitle_4: {fileID: 5525928910836067143, guid: 0ad0a26faa302a7429d5a7f76bdfd23b,
+    type: 3}
+  subtitle_5: {fileID: 5525928910836067143, guid: 31ba81188372d5647a0ea44344bb2c46,
+    type: 3}
 --- !u!1001 &199960298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -868,7 +872,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 889496403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5067d68dce59596409e9d08d7c1ae2b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0663ac72b36893445b2f26a40237e59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &894225320
@@ -1108,7 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveAxisName: Vertical
   rotateAxisName: Horizontal
-  fireButtonName: Fire1
+  fireButtonName: 0
   reloadButtonName: Reload
 --- !u!114 &894225327
 MonoBehaviour:
@@ -1173,7 +1177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1145690168
 RectTransform:
   m_ObjectHideFlags: 0

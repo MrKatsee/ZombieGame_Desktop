@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Intro_1_subtitle : MonoBehaviour
 {
     public GameObject subtitle_1;
     public GameObject subtitle_2;
     public GameObject subtitle_3;
+    public GameObject subtitle_4;
+    public GameObject subtitle_5;
+
 
     float time = 0;
 
@@ -14,6 +18,8 @@ public class Intro_1_subtitle : MonoBehaviour
     bool bSwitch_1 = true;
     bool bSwitch_2 = true;
     bool bSwitch_3 = true;
+    bool bSwitch_4 = true;
+    bool bSwitch_5 = true;
 
     // Update is called once per frame
     void Update()
@@ -23,6 +29,10 @@ public class Intro_1_subtitle : MonoBehaviour
         if (bSwitch_1) Make_1();
         else if (time > 3.0f && bSwitch_2) Make_2();
         else if (time > 6.0f && bSwitch_3) Make_3();
+        else if (time > 9.0f && bSwitch_4) Make_4();
+        else if (time > 12.0f && bSwitch_5) Make_5();
+        else if (time > 14.0f) ChangeSecondScene();
+       
     }
 
     private void Make_1()
@@ -45,4 +55,27 @@ public class Intro_1_subtitle : MonoBehaviour
         subtitle_3 = Instantiate(subtitle_3);
         bSwitch_3 = false;
     }
+
+    private void Make_4()
+    {
+        Destroy(subtitle_3);
+        subtitle_4 = Instantiate(subtitle_4);
+        bSwitch_4 = false;
+    }
+
+    private void Make_5()
+    {
+        subtitle_5 = Instantiate(subtitle_5);
+        bSwitch_5 = false;
+    }
+
+    public void ChangeFirstScene()
+    {
+        SceneManager.LoadScene("Intro_1_JM");
+    }
+    public void ChangeSecondScene()
+    {
+        SceneManager.LoadScene("Intro_2_JM");
+    }
+
 }

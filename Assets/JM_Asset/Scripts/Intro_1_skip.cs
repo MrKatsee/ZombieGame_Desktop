@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Intro_2_skip : MonoBehaviour
+public class Intro_1_skip : MonoBehaviour
 {
     public void ChangeFirstScene()
     {
