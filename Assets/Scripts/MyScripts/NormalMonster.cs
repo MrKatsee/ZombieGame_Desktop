@@ -9,9 +9,8 @@ public class NormalMonster : Monster
     float damage = 1f;
 
     // Start is called before the first frame update
-    public override void Start()
+    public void Awake()
     {
-        base.Start();
         maxHP = 3f;
         HP = 3f;
     }

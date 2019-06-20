@@ -13,7 +13,7 @@ public class Rifle : Weapon
         attackSpd = 10f;
         bulletSpd = 20f;
         damage = 1f;
-        max_bullet = 30f;
+        max_bullet = 100f;
         cur_bullet = max_bullet;
         sprite = PlayManager.Instance.LoadGunSprite(Weapons.RIFLE);
     }

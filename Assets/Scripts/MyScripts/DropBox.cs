@@ -10,11 +10,15 @@ public class DropBox : MonoBehaviour
     public void Init_DropBox()
     {
         //드랍 박스 안에 무슨 무기 들었는지 초기화
-        if (CheckRandom(0f, 1f))
+        if (CheckRandom(0f, 0.5f))
         {
-            Debug.Log("Rifle");
-
             weapon = new GameObject("Rifle").AddComponent<Rifle>();
+            weapon.transform.parent = gameObject.transform.parent;
+            weapon.Init_Weapon();
+        }
+        else if (CheckRandom(0.5f, 1f))
+        {
+            weapon = new GameObject("Pistol").AddComponent<Pistol>();
             weapon.transform.parent = gameObject.transform.parent;
             weapon.Init_Weapon();
         }
@@ -22,7 +26,8 @@ public class DropBox : MonoBehaviour
 
     bool CheckRandom(float min, float max)
     {
-        return (Random.Range(0f, 1f) >= min) && (Random.Range(0f, 1f) < max);
+        float checker = Random.Range(0f, 1f);
+        return (checker >= min) && (checker < max);
     }
 
     public Weapon GetWeapon(Transform parent)

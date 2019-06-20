@@ -7,10 +7,10 @@ public class Pistol : Weapon
     public override void Init_Weapon()
     {
         bullet = PlayManager.Instance.bullet;
-        attackSpd = 1f;
+        attackSpd = 3f;
         bulletSpd = 10f;
-        damage = 1f;
-        max_bullet = 10f;
+        damage = 1.5f;
+        max_bullet = 30f;
         cur_bullet = max_bullet;
         weapon = Weapons.PISTOL;
         sprite = PlayManager.Instance.LoadGunSprite(Weapons.PISTOL);

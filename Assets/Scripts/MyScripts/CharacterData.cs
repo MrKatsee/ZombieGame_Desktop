@@ -4,10 +4,11 @@ using UnityEngine;
 
 public abstract class CharacterData : MonoBehaviour
 {
-    private float hp;
+    public float hp;
     public float HP
     {
-        get { return hp; } set
+        get { return hp; }
+        set
         {
             hp = value;
 
@@ -22,7 +23,7 @@ public abstract class CharacterData : MonoBehaviour
 
     public virtual void GetDamage(float damage)
     {
-        HP -= damage;
+        HP = HP - damage;
     }
 
     public virtual void DestroyCall()

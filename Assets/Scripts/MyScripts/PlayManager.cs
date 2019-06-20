@@ -33,7 +33,11 @@ public class PlayManager : MonoBehaviour
 
     public GameObject GetTheObject()
     {
-        return theObject;
+        if (LevelManager.Instance.level == 1)
+            return theObject;
+        else if (LevelManager.Instance.level == 2)
+            return player;
+        return player;
     }
 
     public GameObject systemMessageCanvas;
@@ -46,6 +50,15 @@ public class PlayManager : MonoBehaviour
     {
         DropBox dB = Instantiate(dropBox, pos, Quaternion.identity).GetComponent<DropBox>();
         dB.Init_DropBox();
+    }
+    public void InstantiateDropBox(Vector3 pos, float percent)
+    {
+        float randomPercent = Random.Range(0f, 1f);
+        if (randomPercent > percent)
+        {
+            DropBox dB = Instantiate(dropBox, pos, Quaternion.identity).GetComponent<DropBox>();
+            dB.Init_DropBox();
+        }
     }
 
     public Sprite[] gunSprites;

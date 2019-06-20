@@ -57,6 +57,7 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitUntil(() => level_2_stage == 3);
 
+        PlayManager.Instance.GameOver();
     }
 
     public void Init_Player(int init_Level)
@@ -74,11 +75,12 @@ public class LevelManager : MonoBehaviour
 
         if (init_Level == 1)
         {
+            level = 1;
+            level_1_stage = 0;
+
             PlayManager.Instance.GetData().transform.position = new Vector3(4f, 0f, 0f);
             PlayManager.Instance.GetData().Init_Player();
             PlayManager.Instance.GetTheObject().GetComponent<Stage_1_Object>().Init_1_Object();
-            level = 1;
-            level_1_stage = 0;
             StartCoroutine(Level_1_Routine());
             foreach (var j in jerryCan)
             {
@@ -87,10 +89,11 @@ public class LevelManager : MonoBehaviour
         }
         else if (init_Level == 2)
         {
-            PlayManager.Instance.GetData().transform.position = new Vector3(105f, 0f, -30f);
-            PlayManager.Instance.GetData().Init_Player();
             level = 2;
             level_2_stage = 0;
+
+            PlayManager.Instance.GetData().transform.position = new Vector3(105f, 0f, -30f);
+            PlayManager.Instance.GetData().Init_Player();
             StartCoroutine(Level_2_Routine());
         }
     }

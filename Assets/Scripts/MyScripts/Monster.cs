@@ -29,7 +29,7 @@ public abstract class Monster : CharacterData
 
     private IEnumerator DestroyEnemyRoutine()
     {
-        PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f));
+        PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f), 0.3f);
 
         Collider[] enemyColliders = GetComponents<Collider>();
         for (int i = 0; i < enemyColliders.Length; i++)

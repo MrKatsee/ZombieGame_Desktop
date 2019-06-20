@@ -52,7 +52,7 @@ public class Stage_1_Object : MonoBehaviour
 
     public void Init_1_Object()
     {
-        maxHP = 100;
+        maxHP = 300;
         HP = maxHP;
         maxPercent = 4f;
         ObjectPercent = 0f;

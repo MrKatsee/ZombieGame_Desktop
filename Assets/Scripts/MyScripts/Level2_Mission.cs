@@ -8,7 +8,7 @@ public class Level2_Mission : MonoBehaviour
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.gameObject.tag == "Player" && LevelManager.Instance.level == 0)
+        if (c.gameObject.tag == "Player" && LevelManager.Instance.level_2_stage == 0)
         {
             LevelManager.Instance.level_2_stage = 1;
             StartCoroutine(Wave1());
