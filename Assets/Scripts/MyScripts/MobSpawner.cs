@@ -10,7 +10,6 @@ public class MobSpawner : MonoBehaviour
 
     private void Start()
     {
-        mobNum = 10;
         StartCoroutine(SpawnMob());
     }
 

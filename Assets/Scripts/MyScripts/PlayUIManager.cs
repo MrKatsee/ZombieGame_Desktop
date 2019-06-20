@@ -29,7 +29,7 @@ public class PlayUIManager : MonoBehaviour
     {
         sprite_Sub.sprite = null;
         bullet_Sub.fillAmount = 0f;
-        changeButton.color = new Color(255f, 255f, 255f, 1f);
+        changeButton.color = new Color(255f, 255f, 255f, 0.4f);
     }
     public void ChangeWeaponUI_Sub(Weapon weapon, bool isSub)
     {
@@ -42,8 +42,8 @@ public class PlayUIManager : MonoBehaviour
         bullet_Sub.fillAmount = bullet_percentage;
 
         if (isSub)
-            changeButton.color = new Color(255f, 255f, 255f, 1f);
-        else changeButton.color = new Color(125f, 0f, 0f, 1f);
+            changeButton.color = new Color(255f, 255f, 255f, 0.4f);
+        else changeButton.color = new Color(125f, 0f, 0f, 0.4f);
 
 
     }
