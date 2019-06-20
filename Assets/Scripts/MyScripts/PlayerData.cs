@@ -47,13 +47,21 @@ public class PlayerData : CharacterData
         }
     }
 
-    void Start()
+    public void Init_Player()
     {
+        maxHP = 10f;
+        HP = maxHP;
+
         //기본 무기
         Main_Weapon = new GameObject("Pistol").AddComponent<Pistol>();
         Main_Weapon.transform.parent = gameObject.transform;
         Main_Weapon.Init_Weapon();
         PlayUIManager.Instance.ChangeWeaponUI_Main(Main_Weapon);
+    }
+
+    void Start()
+    {
+        Init_Player();
     }
 
     //플레이어 hp ui, 드랍박스 아이템을 체인지 창에 띄워주는 거
@@ -92,17 +100,22 @@ public class PlayerData : CharacterData
             {
                 Weapon temp = col.gameObject.GetComponent<DropBox>().GetWeapon(transform);
                 //이미 가지고 있는 무기일 경우 -> 장탄수 회복
-                if (temp == Sub_Weapon)
-                {
-                    Sub_Weapon.ResetBullet();
-                    Destroy(temp.gameObject);
-                }
-                else if (temp == Main_Weapon)
+                if (temp.weapon == Main_Weapon.weapon)
                 {
                     Main_Weapon.ResetBullet();
                     Destroy(temp.gameObject);
                 }
+                else if (Sub_Weapon != null)
+                {
+                    if (temp.weapon == Sub_Weapon.weapon)
+                    {
+                        Sub_Weapon.ResetBullet();
+                        Destroy(temp.gameObject);
+                    }
+                    else Sub_Weapon = temp;
+                }
                 else Sub_Weapon = temp;
+
                 alreadyGetted = true;
                 Destroy(col.gameObject);
             }

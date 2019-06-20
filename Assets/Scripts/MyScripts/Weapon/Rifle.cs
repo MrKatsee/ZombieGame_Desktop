@@ -8,6 +8,8 @@ public class Rifle : Weapon
     {
         bullet = PlayManager.Instance.bullet;
 
+        weapon = Weapons.RIFLE;
+
         attackSpd = 10f;
         bulletSpd = 20f;
         damage = 1f;

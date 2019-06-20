@@ -15,8 +15,10 @@ public abstract class CharacterData : MonoBehaviour
             {
                 DestroyCall();
             }
+            else if (hp > maxHP) hp = maxHP;
         }
     }
+    public float maxHP;
 
     public virtual void GetDamage(float damage)
     {

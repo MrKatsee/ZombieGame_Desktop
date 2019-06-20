@@ -12,6 +12,7 @@ public class Pistol : Weapon
         damage = 1f;
         max_bullet = 10f;
         cur_bullet = max_bullet;
+        weapon = Weapons.PISTOL;
         sprite = PlayManager.Instance.LoadGunSprite(Weapons.PISTOL);
     }
 

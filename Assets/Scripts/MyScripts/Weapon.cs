@@ -12,6 +12,8 @@ public abstract class Weapon : MonoBehaviour
     public GameObject bullet;
     public Sprite sprite;
 
+    public Weapons weapon;
+
     public float max_bullet;
     public float cur_bullet;
     public float damage;
