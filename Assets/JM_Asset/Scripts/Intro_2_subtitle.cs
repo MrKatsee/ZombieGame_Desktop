@@ -80,6 +80,6 @@ public class Intro_2_subtitle : MonoBehaviour
 
     public void ChangeSecondScene()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Main");
     }
 }

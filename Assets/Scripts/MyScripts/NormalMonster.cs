@@ -13,6 +13,7 @@ public class NormalMonster : Monster
     {
         base.Start();
         HP = 3f;
+        maxHP = 3f;
     }
 
     // Update is called once per frame
