@@ -19,11 +19,19 @@ public class PlayUIManager : MonoBehaviour
     public Image sprite_Sub;
     public Image bullet_Sub;
 
+    public Image changeButton;
+
     public void ChangeWeaponUI_Main(Weapon weapon)
     {
         sprite_Main.sprite = weapon.sprite;
     }
-    public void ChangeWeaponUI_Sub(Weapon weapon)
+    public void ChangeWeaponUI_Sub()
+    {
+        sprite_Sub.sprite = null;
+        bullet_Sub.fillAmount = 0f;
+        changeButton.color = new Color(255f, 255f, 255f, 1f);
+    }
+    public void ChangeWeaponUI_Sub(Weapon weapon, bool isSub)
     {
         sprite_Sub.sprite = weapon.sprite;
 
@@ -32,6 +40,12 @@ public class PlayUIManager : MonoBehaviour
         max = weapon.max_bullet;
         float bullet_percentage = 1f - cur / max;
         bullet_Sub.fillAmount = bullet_percentage;
+
+        if (isSub)
+            changeButton.color = new Color(255f, 255f, 255f, 1f);
+        else changeButton.color = new Color(125f, 0f, 0f, 1f);
+
+
     }
     public void UpdateBullet(Weapon weapon)
     {

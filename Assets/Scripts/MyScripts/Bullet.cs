@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
 
         //StartCoroutine(Move());
         transform.rotation = Quaternion.LookRotation(vec, Vector3.up);
+        transform.position = transform.position + new Vector3(0f, 0.3f, 0f);
     }
     /*
     IEnumerator Move()

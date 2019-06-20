@@ -21,7 +21,7 @@ public class PlayerData : CharacterData
         set
         {
             sub_Weapon = value;
-            PlayUIManager.Instance.ChangeWeaponUI_Sub(sub_Weapon);
+            PlayUIManager.Instance.ChangeWeaponUI_Sub(sub_Weapon, true);
         }
     }
     private Weapon drop_Weapon;
@@ -31,6 +31,19 @@ public class PlayerData : CharacterData
         set
         {
             drop_Weapon = value;
+            if (drop_Weapon != null)
+            {
+                PlayUIManager.Instance.ChangeWeaponUI_Sub(Drop_Weapon, false);
+            }
+            else
+            {
+                PlayUIManager.Instance.ChangeWeaponUI_Sub();
+
+                if (Sub_Weapon == null)
+                    return;
+
+                PlayUIManager.Instance.ChangeWeaponUI_Sub(Sub_Weapon, true);
+            }
         }
     }
 
@@ -56,17 +69,12 @@ public class PlayerData : CharacterData
             if (col.gameObject.tag == "Box" && alreadyGetted == false)
             {
                 Drop_Weapon = col.gameObject.GetComponent<DropBox>().weapon;
-                PlayUIManager.Instance.ChangeWeaponUI_Sub(Drop_Weapon);
                 alreadyGetted = true;
             }
         }
         if (alreadyGetted == false)
         {
-            if (sub_Weapon == null)
-                return;
-
             Drop_Weapon = null;
-            PlayUIManager.Instance.ChangeWeaponUI_Sub(Sub_Weapon);
         }
 
     }
@@ -74,15 +82,27 @@ public class PlayerData : CharacterData
     public void ChangeWeapon()
     {
         Collider[] c = Physics.OverlapBox(transform.position, new Vector3(1f, 1f, 1f) * 0.5f);
-        //box와 겹친 경우 -> sub / drop 간 교환
 
+        //box와 겹친 경우 -> sub / drop 간 교환
         bool alreadyGetted = false;
 
         foreach (var col in c)
         {
             if (col.gameObject.tag == "Box" && alreadyGetted == false)
             {
-                Sub_Weapon = col.gameObject.GetComponent<DropBox>().GetWeapon(transform);
+                Weapon temp = col.gameObject.GetComponent<DropBox>().GetWeapon(transform);
+                //이미 가지고 있는 무기일 경우 -> 장탄수 회복
+                if (temp == Sub_Weapon)
+                {
+                    Sub_Weapon.ResetBullet();
+                    Destroy(temp.gameObject);
+                }
+                else if (temp == Main_Weapon)
+                {
+                    Main_Weapon.ResetBullet();
+                    Destroy(temp.gameObject);
+                }
+                else Sub_Weapon = temp;
                 alreadyGetted = true;
                 Destroy(col.gameObject);
             }

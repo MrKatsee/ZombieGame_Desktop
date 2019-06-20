@@ -1354,12 +1354,6 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 199960298}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1025635301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7366721705894503817, guid: 2e7d931b702a3c94f84bc03052ed2aa2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1696363765}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098632210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1767,7 @@ MonoBehaviour:
   bullet_Main: {fileID: 859613985}
   sprite_Sub: {fileID: 749056626}
   bullet_Sub: {fileID: 2067662104}
+  changeButton: {fileID: 2074117454}
 --- !u!1001 &1696363765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1980,7 +1975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1944530890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95fc9e7fbf3e1484faa1a2178a2d1376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob: {fileID: 1025635301}
+  mob: {fileID: 7366721705894503817, guid: 2e7d931b702a3c94f84bc03052ed2aa2, type: 3}
   mobNum: 1
   spawnSpd: 1
 --- !u!4 &1944530891
@@ -2473,6 +2468,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595761793323350585, guid: 68e453f2648acd54882e2601ccaa1313,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595761793323350585, guid: 68e453f2648acd54882e2601ccaa1313,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595761793323350585, guid: 68e453f2648acd54882e2601ccaa1313,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68e453f2648acd54882e2601ccaa1313, type: 3}

@@ -35,6 +35,11 @@ public abstract class Weapon : MonoBehaviour
         temp.GetComponent<Bullet>().Init_Bullet(vec, damage, bulletSpd);
     }
     
+    public void ResetBullet()
+    {
+        cur_bullet = max_bullet;
+    }
+
     public void SetCool()
     {
         attackCool = 1f/attackSpd;
