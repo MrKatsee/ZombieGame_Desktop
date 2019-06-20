@@ -43,9 +43,9 @@ public class MonsterControl : Control
 
     private void Start()
     {
-        if (LevelManager.Instance.level == 1)
+        if (LevelManager.level == 1)
             targetEntity = PlayManager.Instance.GetTheObject();
-        else if (LevelManager.Instance.level == 2)
+        else if (LevelManager.level == 2)
             targetEntity = PlayManager.Instance.GetData().gameObject;
         StartCoroutine(UpdatePath());
     }

@@ -2490,6 +2490,7 @@ MonoBehaviour:
   dropBox: {fileID: 6341045265829524726, guid: d66ff880ffe55444e9a2ce4a9ea80b24, type: 3}
   theObject: {fileID: 1131302053}
   bullet: {fileID: 1366601375041871219, guid: 170ad274d1e5256469100e0da442e741, type: 3}
+  stage2_Object: {fileID: 1423078956}
   systemMessageCanvas: {fileID: 910932096}
   gunSprites:
   - {fileID: 21300000, guid: b890a47c039867943a9de369dde002ff, type: 3}
@@ -2514,7 +2515,6 @@ MonoBehaviour:
   - {fileID: 1010047205}
   - {fileID: 2123253270}
   - {fileID: 352419435}
-  level: 0
   level_1_stage: 0
   level_2_stage: 0
 --- !u!4 &1099320351 stripped

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2e6f13439a4056644bed3791d88c8ed9
+  - enabled: 1
+    path: Assets/JM_Asset/Scenes/Between_map1_map2_JM.unity
+    guid: bc40aadcb50417b408405d4342be0eae
   m_configObjects: {}

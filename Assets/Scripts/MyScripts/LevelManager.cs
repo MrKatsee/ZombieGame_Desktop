@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,11 +14,11 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] jerryCan;
 
-    public int level = 0;
+    public static int level = 1;
     public int level_1_stage = 0;
     private void Start()
     {
-        Init_Player(1);
+        Init_Player(level);
     }
 
     IEnumerator Level_1_Routine()
@@ -39,7 +40,8 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitUntil(() => level_1_stage == 4);
 
-        Init_Player(2);
+        level = 2;
+        SceneManager.LoadScene("Between_map1_map2_JM");
     }
 
     public int level_2_stage = 0;
@@ -65,12 +67,7 @@ public class LevelManager : MonoBehaviour
         var zombies = FindObjectsOfType<NormalMonster>();
         foreach (var z in zombies)
         {
-            z.DestroyCall();
-        }
-        var boxes = FindObjectsOfType<DropBox>();
-        foreach (var b in boxes)
-        {
-            if (b.weapon.weapon != Weapons.JERRYCAN) Destroy(b.gameObject);
+            z.DestroyCall(false);
         }
 
         if (init_Level == 1)
@@ -94,6 +91,7 @@ public class LevelManager : MonoBehaviour
 
             PlayManager.Instance.GetData().transform.position = new Vector3(105f, 0f, -30f);
             PlayManager.Instance.GetData().Init_Player();
+            PlayManager.Instance.GetStage2_Object().GetComponent<Level2_Mission>().StopAllCoroutines();
             StartCoroutine(Level_2_Routine());
         }
     }

@@ -22,14 +22,22 @@ public abstract class Monster : CharacterData
         return monsterControl;
     }
 
+    bool drop_On = true;
+
     public override void DestroyCall()
     {
+        StartCoroutine(DestroyEnemyRoutine());
+    }
+    public void DestroyCall(bool canDrop)
+    {
+        drop_On = canDrop;
         StartCoroutine(DestroyEnemyRoutine());
     }
 
     private IEnumerator DestroyEnemyRoutine()
     {
-        PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f), 0.3f);
+        if (drop_On)
+            PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f), 0.3f);
 
         Collider[] enemyColliders = GetComponents<Collider>();
         for (int i = 0; i < enemyColliders.Length; i++)

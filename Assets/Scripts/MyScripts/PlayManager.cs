@@ -20,6 +20,7 @@ public class PlayManager : MonoBehaviour
     public GameObject dropBox;
     public GameObject theObject;
     public GameObject bullet;
+    public GameObject stage2_Object;
 
     public PlayerControl GetControl()
     {
@@ -30,12 +31,15 @@ public class PlayManager : MonoBehaviour
     {
         return player.GetComponent<PlayerData>();
     }
-
+    public GameObject GetStage2_Object()
+    {
+        return stage2_Object;
+    }
     public GameObject GetTheObject()
     {
-        if (LevelManager.Instance.level == 1)
+        if (LevelManager.level == 1)
             return theObject;
-        else if (LevelManager.Instance.level == 2)
+        else if (LevelManager.level == 2)
             return player;
         return player;
     }

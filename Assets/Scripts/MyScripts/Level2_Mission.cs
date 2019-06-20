@@ -24,7 +24,8 @@ public class Level2_Mission : MonoBehaviour
 
         yield return new WaitForSeconds(20f);
 
-        StartCoroutine(Wave2());
+        if (LevelManager.Instance.level_2_stage == 1)
+            StartCoroutine(Wave2());
     }
 
     IEnumerator Wave2()
@@ -36,7 +37,8 @@ public class Level2_Mission : MonoBehaviour
 
         yield return new WaitForSeconds(20f);
 
-        StartCoroutine(Wave3());
+        if (LevelManager.Instance.level_2_stage == 1)
+            StartCoroutine(Wave3());
     }
 
     IEnumerator Wave3()
@@ -48,6 +50,7 @@ public class Level2_Mission : MonoBehaviour
 
         yield return new WaitForSeconds(20f);
 
-        LevelManager.Instance.level_2_stage = 2;
+        if (LevelManager.Instance.level_2_stage == 1)
+            LevelManager.Instance.level_2_stage = 2;
     }
 }
