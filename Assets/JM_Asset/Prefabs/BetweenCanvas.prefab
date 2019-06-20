@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4337458923925683009}
   - component: {fileID: 4337458923925683008}
   - component: {fileID: 4337458923925683011}
-  - component: {fileID: 7796644921606126121}
   m_Layer: 5
   m_Name: SkipButton
   m_TagString: Untagged
@@ -120,7 +119,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7796644921606126121}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeSecondScene
         m_Mode: 1
         m_Arguments:
@@ -133,18 +132,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &7796644921606126121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4337458923925683013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5067d68dce59596409e9d08d7c1ae2b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4337458924221025100
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +144,6 @@ GameObject:
   - component: {fileID: 4337458924221025099}
   - component: {fileID: 4337458924221025098}
   - component: {fileID: 4337458924221025101}
-  - component: {fileID: 3893755787465455740}
   m_Layer: 5
   m_Name: BetweenCanvas
   m_TagString: Untagged
@@ -246,28 +232,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3893755787465455740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4337458924221025100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204f7a0f606a05545b02df717fdbff84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitle_1: {fileID: 5525928910836067143, guid: e1f221b4f3b91c2418a598a71d091df6,
-    type: 3}
-  subtitle_2: {fileID: 5525928910836067143, guid: 45e80d408fcf18a45977020320648c15,
-    type: 3}
-  subtitle_3: {fileID: 5525928910836067143, guid: fe1c033ba6eef474ea034b0820933347,
-    type: 3}
-  subtitle_4: {fileID: 5525928910836067143, guid: 63946b4d8cef33043808b0d08e27e716,
-    type: 3}
-  subtitle_5: {fileID: 5525928910836067143, guid: 31ba81188372d5647a0ea44344bb2c46,
-    type: 3}
 --- !u!1 &4337458924329234827
 GameObject:
   m_ObjectHideFlags: 0
