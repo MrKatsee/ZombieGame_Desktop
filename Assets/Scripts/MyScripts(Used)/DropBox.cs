@@ -22,6 +22,8 @@ public class DropBox : MonoBehaviour
             weapon.transform.parent = gameObject.transform.parent;
             weapon.Init_Weapon();
         }
+
+        StartCoroutine(DestroyCount());
     }
 
     bool CheckRandom(float min, float max)
@@ -36,5 +38,17 @@ public class DropBox : MonoBehaviour
         weapon.transform.parent = parent;
 
         return weapon;
+    }
+
+    IEnumerator DestroyCount()
+    {
+        yield return new WaitForSeconds(10f);
+
+        DestroyCall();
+    }
+
+    void DestroyCall()
+    {
+        Destroy(gameObject);
     }
 }

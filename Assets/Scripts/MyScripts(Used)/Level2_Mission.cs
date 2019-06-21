@@ -17,6 +17,8 @@ public class Level2_Mission : MonoBehaviour
 
     IEnumerator Wave1()
     {
+        SystemMessage.SystemMessageCreate("좀비가 몰려옵니다!!!");
+
         foreach (var s in spawner)
         {
             s.Init_Spawner(10, 2f, true);
@@ -30,6 +32,8 @@ public class Level2_Mission : MonoBehaviour
 
     IEnumerator Wave2()
     {
+        SystemMessage.SystemMessageCreate("좀비가 몰려옵니다!!!");
+
         foreach (var s in spawner)
         {
             s.Init_Spawner(15, 2f, true);
@@ -43,6 +47,8 @@ public class Level2_Mission : MonoBehaviour
 
     IEnumerator Wave3()
     {
+        SystemMessage.SystemMessageCreate("좀비가 몰려옵니다!!!");
+
         foreach (var s in spawner)
         {
             s.Init_Spawner(20, 2f, true);

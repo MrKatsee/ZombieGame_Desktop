@@ -57,6 +57,9 @@ public class SystemMessage : MonoBehaviour
         rTransform.localPosition = new Vector3(0, 350f - myMsgNum * 50f, 0f);
 
         timer += Time.deltaTime;
+
+        if (msgNum < 0)
+            msgNum = 0;
     }
 
     IEnumerator DestroyCall()

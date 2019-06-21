@@ -136,8 +136,15 @@ public class PlayerData : CharacterData
 
                 alreadyGetted = true;
                 if (Sub_Weapon.weapon != Weapons.JERRYCAN)
+                {
+                    SoundManager.Instance.PlaySound(2);
                     Destroy(col.gameObject);
-                else col.gameObject.SetActive(false);
+                }
+                else
+                {
+                    col.gameObject.SetActive(false);
+                    SoundManager.Instance.PlaySound(3);
+                }
             }
         }
 
@@ -149,6 +156,8 @@ public class PlayerData : CharacterData
             else if (sub_Weapon.weapon == Weapons.JERRYCAN)
                 return;
 
+            SoundManager.Instance.PlaySound(2);
+
             Weapon temp = Main_Weapon;
             Main_Weapon = Sub_Weapon;
             Sub_Weapon = temp;
@@ -159,6 +168,13 @@ public class PlayerData : CharacterData
 
     public override void DestroyCall()
     {
+        SoundManager.Instance.PlaySound(5);
         PlayManager.Instance.GameOver();
+    }
+
+    public override void GetDamage(float damage)
+    {
+        base.GetDamage(damage);
+        SoundManager.Instance.PlaySound(4);
     }
 }

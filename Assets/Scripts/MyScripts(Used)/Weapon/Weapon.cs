@@ -31,6 +31,8 @@ public abstract class Weapon : MonoBehaviour
 
         SetCool();
 
+        SoundManager.Instance.PlaySound(1);
+
         cur_bullet -= 1f;
 
         GameObject temp = Instantiate(bullet, PlayManager.Instance.GetData().transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);

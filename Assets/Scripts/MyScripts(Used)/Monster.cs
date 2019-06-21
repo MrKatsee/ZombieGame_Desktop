@@ -15,6 +15,7 @@ public abstract class Monster : CharacterData
         enemyAnimator = GetComponent<Animator>();
         pathFinder = GetComponent<NavMeshAgent>();
 
+        StartCoroutine(GroanSound());
     }
 
     public MonsterControl GetControl()
@@ -26,18 +27,30 @@ public abstract class Monster : CharacterData
 
     public override void DestroyCall()
     {
+        SoundManager.Instance.PlaySound(7);
         StartCoroutine(DestroyEnemyRoutine());
     }
+
+    public override void GetDamage(float damage)
+    {
+        base.GetDamage(damage);
+        SoundManager.Instance.PlaySound(6);
+    }
+    bool alreadyDead = false;
+
     public void DestroyCall(bool canDrop)
     {
         drop_On = canDrop;
-        StartCoroutine(DestroyEnemyRoutine());
+        if (!alreadyDead)
+            StartCoroutine(DestroyEnemyRoutine());
     }
 
     private IEnumerator DestroyEnemyRoutine()
     {
         if (drop_On)
-            PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f), 0.3f);
+            PlayManager.Instance.InstantiateDropBox(transform.position + new Vector3(0f, 0.5f, 0f), 0.1f);
+
+        alreadyDead = true;
 
         Collider[] enemyColliders = GetComponents<Collider>();
         for (int i = 0; i < enemyColliders.Length; i++)
@@ -56,6 +69,25 @@ public abstract class Monster : CharacterData
         yield return new WaitForSeconds(5f);
 
         Destroy(gameObject);
+    }
+
+    IEnumerator GroanSound()
+    {
+        float count = 5f;
+        float randomCount = Random.Range(10f, 30f);
+        int randomIndex = (int)Random.Range(8f, 10.99f);
+
+        while(true)
+        {
+            if (count >= randomCount)
+            {
+                count = 0;
+                SoundManager.Instance.PlaySound(randomIndex);
+            }
+
+            count += Time.deltaTime;
+            yield return null;
+        }
     }
 
 }

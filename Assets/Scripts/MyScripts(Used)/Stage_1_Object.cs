@@ -52,6 +52,11 @@ public class Stage_1_Object : MonoBehaviour
 
     public void Init_1_Object()
     {
+        foreach (var s in spawner)
+        {
+            s.StopAllCoroutines();
+        }
+
         maxHP = 300;
         HP = maxHP;
         maxPercent = 4f;
@@ -112,10 +117,14 @@ public class Stage_1_Object : MonoBehaviour
 
     IEnumerator WaitOilComplete()
     {
+        SoundManager.Instance.PlaySound(3);
+
         if (ObjectPercent == 0)
         {
             LevelManager.Instance.level_1_stage = 2;
         }
+
+        SystemMessage.SystemMessageCreate("좀비가 몰려옵니다!!!");
 
         foreach (var s in spawner)
         {

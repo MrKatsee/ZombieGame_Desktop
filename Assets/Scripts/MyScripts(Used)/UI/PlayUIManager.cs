@@ -61,12 +61,32 @@ public class PlayUIManager : MonoBehaviour
     public void RestartButtonClicked()
     {
         gameOverCanvas.SetActive(false);
+        pauseCanavas.SetActive(false);
+        Time.timeScale = 1f;
+
         LevelManager.Instance.RestartCall();
     }
 
     public void MenuButtonClicked()
     {
         gameOverCanvas.SetActive(false);
+        pauseCanavas.SetActive(false);
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene("Intro_Main_JM");
+    }
+
+    public GameObject pauseCanavas;
+
+    public void PauseButtonClicekd()
+    {
+        pauseCanavas.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeButtonClicked()
+    {
+        pauseCanavas.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

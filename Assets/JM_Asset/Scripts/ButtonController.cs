@@ -23,7 +23,7 @@ public class ButtonController : MonoBehaviour
 
     public void ChangeSecondScene()
     {
-      
+        LevelManager.level = 1;
         SceneManager.LoadScene("Intro_1_JM");
     }
 }

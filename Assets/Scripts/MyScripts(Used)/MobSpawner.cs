@@ -18,7 +18,6 @@ public class MobSpawner : MonoBehaviour
     {
         mobNum = n;
         spawnSpd = spd;
-
         StartCoroutine(SpawnMob());
     }
 
@@ -26,7 +25,6 @@ public class MobSpawner : MonoBehaviour
     {
         mobNum = n;
         spawnSpd = spd;
-
         StartCoroutine(SpawnMob_TargettingPlayer());
     }
 
